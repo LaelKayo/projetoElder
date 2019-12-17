@@ -84,7 +84,7 @@ class _NoticeListPageState extends State<NoticeList> {
     List result = await repository.loadNews();
 
     setState(() {
-      result.forEach((item) {
+      result.forEach((book) {
         var notice = new Notice(
             item['url_img'], item['tittle'], item['date'], item['description']);
 
