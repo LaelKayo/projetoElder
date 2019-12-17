@@ -5,8 +5,9 @@ class Detail extends StatelessWidget {
   var _title;
   var _date;
   var _description;
+  var _link;
 
-  Detail(this._img, this._title, this._date, this._description);
+  Detail(this._img, this._title, this._date, this._description, this._link);
 
   @override
   Widget build(BuildContext context) {
@@ -67,6 +68,12 @@ class Detail extends StatelessWidget {
     return new Container(
       margin: new EdgeInsets.only(top: 20.0),
       child: new Text(description),
+    );
+  }
+  _getLink(link){
+    return new Container(
+      margin: new EdgeInsets.only(top: 10.0),
+      child: new Text(link),
     );
   }
 }

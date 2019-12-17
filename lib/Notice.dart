@@ -6,8 +6,9 @@ class Notice extends StatelessWidget {
   var _title;
   var _date;
   var _description;
+  var _link;
 
-  Notice(this._img, this._title, this._date, this._description);
+  Notice(this._img, this._title, this._date, this._description, this._link);
 
   BuildContext _context;
 
@@ -85,10 +86,17 @@ class Notice extends StatelessWidget {
     );
   }
 
+  Widget _getLink(link) {
+    return new Container(
+      margin: new EdgeInsets.only(top: 10.0),
+      child: new Text(link),
+    );
+  }
+
   showDetail() {
     Navigator.of(_context)
         .push(new MaterialPageRoute(builder: (BuildContext context) {
-      return new Detail(_img, _title, _date, _description);
+      return new Detail(_img, _title, _date, _description, _link);
     }));
   }
 }
