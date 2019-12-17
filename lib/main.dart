@@ -13,6 +13,7 @@ class NewsApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: new NoticeList(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
