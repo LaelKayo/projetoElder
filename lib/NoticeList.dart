@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'Notice.dart';
 import 'NewApi.dart';
@@ -20,7 +22,17 @@ class _NoticeListPageState extends State<NoticeList> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: new AppBar(),
+      appBar: new AppBar(
+        elevation: .5,
+        leading: IconButton(
+          icon: Icon(Icons.exit_to_app),
+          onPressed: () {
+            exit(0);
+          },
+        ),
+        title: Text('Book Store'),
+
+      ),
       body: new Container(
         child: new Column(
           children: <Widget>[

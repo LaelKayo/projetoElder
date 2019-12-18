@@ -4,7 +4,7 @@ import "package:http/http.dart" as http;
 
 class NewsApi {
   String url =
-      "https://raw.githubusercontent.com/LaelKayo/projetoElder/master/assets/book.json";//tem que colocar a url do repositorio do git
+      "https://raw.githubusercontent.com/LaelKayo/projetoElder/master/assets/book.json";//link do repositório do git
 
   Future<List> loadNews() async {
     // Make a HTTP GET request to the CoinMarketCap API.

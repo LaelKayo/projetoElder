@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 
 class Detail extends StatelessWidget {
@@ -5,14 +6,31 @@ class Detail extends StatelessWidget {
   var _title;
   var _date;
   var _description;
-  var _link;
 
-  Detail(this._img, this._title, this._date, this._description, this._link);
+  Detail(this._img, this._title, this._date, this._description);
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: new AppBar(),
+      appBar: new AppBar(
+        elevation: .5,
+        leading: IconButton(
+          icon: Icon(Icons.exit_to_app),
+          onPressed: () {
+            exit(0);
+          },
+        ),
+        title: Text('Book'),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.picture_as_pdf),
+            onPressed: () {
+              //
+              //
+            },
+          )
+        ],
+      ),
       body: new Container(
         margin: new EdgeInsets.all(10.0),
         child: new Material(
@@ -68,12 +86,6 @@ class Detail extends StatelessWidget {
     return new Container(
       margin: new EdgeInsets.only(top: 20.0),
       child: new Text(description),
-    );
-  }
-  _getLink(link){
-    return new Container(
-      margin: new EdgeInsets.only(top: 10.0),
-      child: new Text(link),
     );
   }
 }
