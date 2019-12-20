@@ -9,6 +9,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   bool _isLoading = false, _isInit = true;
   PDFDocument document;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,7 +19,7 @@ class _MyAppState extends State<MyApp> {
             Expanded(
               child: Center(
                 child: _isInit
-                    ? Text('')
+                    ? Text('Press Button')
                     : _isLoading
                         ? Center(
                             child: CircularProgressIndicator(),
@@ -30,8 +31,8 @@ class _MyAppState extends State<MyApp> {
               mainAxisSize: MainAxisSize.max,
               children: <Widget>[
                 Expanded(
-                  child: FloatingActionButton(
-                    child: Text('PDF'),
+                  child: RaisedButton(
+                    child: Text('To View PDF'),
                     onPressed: () {
                       loadFromAssets();
                     },
@@ -45,7 +46,7 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  void loadFromAssets()async{
+  void loadFromAssets() async {
     setState(() {
       _isInit = false;
       _isLoading = true;

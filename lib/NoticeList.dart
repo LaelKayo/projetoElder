@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'Notice.dart';
 import 'NewApi.dart';
@@ -160,6 +159,6 @@ class _NoticeListPageState extends State<NoticeList> {
       _category_selected = index;
     });
 
-    //Realiza chamada de serviço para atualizar as noticias de acordo com a categoria selecionada
+    //fazer mais atualização!!!
   }
 }

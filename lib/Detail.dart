@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'dart:js';
 import 'package:flutter/material.dart';
 import 'package:projetoelder/pdfV.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -14,8 +13,12 @@ class Detail extends StatelessWidget {
 
   Detail(this._img, this._title, this._date, this._description);
 
+  BuildContext _context;
+
   @override
   Widget build(BuildContext context) {
+    this._context = context;
+
     return new Scaffold(
       appBar: new AppBar(
         elevation: .5,
@@ -66,8 +69,8 @@ class Detail extends StatelessWidget {
                   onPressed: () {
                     //loadFromAssets();
                     //_launchURL();
-                    //Navigator.push(context, MaterialPageRoute(builder: (context) => MyApp()),
-                    //);
+                    //_passPDFPage(context);
+                    showPDF();
                   },
                 ),
               )
@@ -109,5 +112,19 @@ class Detail extends StatelessWidget {
     } else {
       throw 'Could not launch $url';
     }
+  }
+
+  void _passPDFPage(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => MyApp()),
+    );
+  }
+
+  showPDF() {
+    
+    Navigator.of(_context).push(
+      new MaterialPageRoute(builder: (BuildContext context) => MyApp()),
+    );
   }
 }
