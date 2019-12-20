@@ -31,7 +31,6 @@ class _NoticeListPageState extends State<NoticeList> {
           },
         ),
         title: Text('Book Store'),
-
       ),
       body: new Container(
         child: new Column(

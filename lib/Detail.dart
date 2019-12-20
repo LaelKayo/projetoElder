@@ -1,5 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter_plugin_pdf_viewer/flutter_plugin_pdf_viewer.dart';
+import 'package:flutter/material.dart';
 
 class Detail extends StatelessWidget {
   var _img;
@@ -21,15 +23,6 @@ class Detail extends StatelessWidget {
           },
         ),
         title: Text('Book'),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.picture_as_pdf),
-            onPressed: () {
-              //
-              //
-            },
-          )
-        ],
       ),
       body: new Container(
         margin: new EdgeInsets.all(10.0),
@@ -61,6 +54,19 @@ class Detail extends StatelessWidget {
           _getTittle(tittle),
           _getDate(_date),
           _getDescription(description),
+          Row(
+                mainAxisSize: MainAxisSize.max,
+                children: <Widget>[
+                  Expanded(
+                    child: FloatingActionButton(
+                      child: Text('PDF'),
+                      onPressed: () {
+                        //loadFromAssets();
+                      },
+                    ),
+                  )
+                ],
+              )
         ],
       ),
     );
@@ -89,3 +95,4 @@ class Detail extends StatelessWidget {
     );
   }
 }
+
