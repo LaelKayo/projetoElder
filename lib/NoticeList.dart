@@ -54,8 +54,8 @@ class _NoticeListPageState extends State<NoticeList> {
 
   Widget _getBottomNavigationBa() {
     return new BottomNavigationBar(
-      onTap: onTabTapped, // new
-      currentIndex: _currentIndex, // new
+      onTap: onTabTapped, 
+      currentIndex: _currentIndex, 
       type: BottomNavigationBarType.fixed,
       items: [
         new BottomNavigationBarItem(

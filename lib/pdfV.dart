@@ -18,7 +18,7 @@ class _MyAppState extends State<MyApp> {
             Expanded(
               child: Center(
                 child: _isInit
-                    ? Text('test')
+                    ? Text('')
                     : _isLoading
                         ? Center(
                             child: CircularProgressIndicator(),
@@ -30,7 +30,7 @@ class _MyAppState extends State<MyApp> {
               mainAxisSize: MainAxisSize.max,
               children: <Widget>[
                 Expanded(
-                  child: MaterialButton(
+                  child: FloatingActionButton(
                     child: Text('PDF'),
                     onPressed: () {
                       loadFromAssets();

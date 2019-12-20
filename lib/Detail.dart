@@ -1,5 +1,8 @@
 import 'dart:io';
+import 'dart:js';
 import 'package:flutter/material.dart';
+import 'package:projetoelder/pdfV.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_plugin_pdf_viewer/flutter_plugin_pdf_viewer.dart';
 import 'package:flutter/material.dart';
 
@@ -55,18 +58,21 @@ class Detail extends StatelessWidget {
           _getDate(_date),
           _getDescription(description),
           Row(
-                mainAxisSize: MainAxisSize.max,
-                children: <Widget>[
-                  Expanded(
-                    child: FloatingActionButton(
-                      child: Text('PDF'),
-                      onPressed: () {
-                        //loadFromAssets();
-                      },
-                    ),
-                  )
-                ],
+            mainAxisSize: MainAxisSize.max,
+            children: <Widget>[
+              Expanded(
+                child: FloatingActionButton(
+                  child: Text('PDF'),
+                  onPressed: () {
+                    //loadFromAssets();
+                    //_launchURL();
+                    //Navigator.push(context, MaterialPageRoute(builder: (context) => MyApp()),
+                    //);
+                  },
+                ),
               )
+            ],
+          )
         ],
       ),
     );
@@ -94,5 +100,14 @@ class Detail extends StatelessWidget {
       child: new Text(description),
     );
   }
-}
 
+  void _launchURL() async {
+    const url =
+        'https://www.caelum.com.br/download/caelum-html-css-javascript.pdf';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+}
